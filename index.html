@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瑪莎姑媽的愛心便當盒與暖心菜單</title>
+<style>
+  body {
+    background-color: #2b1d14;
+    color: #331e12;
+    font-family: "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 15px;
+  }
+  .page {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #f7ebd2;
+    border: 4px solid #6e4226;
+    border-radius: 8px;
+    padding: 25px 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #6b1a1a;
+    border-bottom: 2px solid #8c5832;
+    padding-bottom: 10px;
+    margin-top: 0;
+  }
+  h2 {
+    color: #6b1a1a;
+    border-bottom: 1px dashed #8c5832;
+    padding-bottom: 4px;
+    margin-top: 28px;
+  }
+  .box {
+    background-color: #fffaf0;
+    border: 1px solid #c9a375;
+    border-radius: 6px;
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+  .tool {
+    background-color: #591c16;
+    color: #fff8e7;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+  }
+  .tool-result {
+    background-color: #fffaf0;
+    color: #331e12;
+    padding: 14px;
+    border-radius: 6px;
+    margin-top: 12px;
+  }
+  button {
+    background-color: #8c2323;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+  }
+  button:hover {
+    background-color: #ab2e2e;
+  }
+  .btn-gold {
+    background-color: #d9a75c;
+    color: #2b1d14;
+    font-size: 1.05rem;
+    padding: 10px 18px;
+  }
+  .btn-gold:hover {
+    background-color: #ebba6e;
+  }
+  .dish-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #591c16;
+    margin-bottom: 6px;
+  }
+  .say {
+    color: #7d3c1a;
+    font-style: italic;
+    margin: 6px 0;
+  }
+  .effect {
+    background-color: #e8f2ea;
+    color: #1c3d22;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-size: 0.93rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <h1>瑪莎姑媽的愛心便當盒 ＆ 暖心菜單</h1>
+
+  <h2>第一部分：瑪莎姑媽的愛心次元便當盒</h2>
+  <div class="box">
+    <p><strong>奇物（珍稀，無需同調）</strong></p>
+    <p><strong>外觀敘述：</strong>三層圓形黃銅保溫便當盒，外層包著<strong>紅白格紋法蘭絨包袱布</strong>並打上大蝴蝶結。蓋子上的家族雙頭鷹徽記被縫了一塊<strong>微笑小肥豬布貼</strong>遮住；木頭吊牌寫著：<em>「乖孫出門在外要按時吃飯，誰敢挑食就打屁股！」</em></p>
+    <ul>
+      <li><strong>次元廚房：</strong>功能如同<strong>次元袋</strong>（上限 500 磅，自重 5 磅）。只收乾淨衣物與物資，塞入怪物屍塊或毒藥會「呸！」地全吐出來並大罵。</li>
+      <li><strong>每日供餐：</strong>每天黎明自動出現 <strong>4 份熱騰騰的姑媽料理</strong>（自帶餐具與餐巾）。擲 <strong>1d10</strong> 決定今日菜色（便當盒餐點不會觸發變身小肥豬懲罰）。</li>
+      <li><strong>保暖圍巾：</strong>底層永遠塞著四條<strong>手工厚羊毛圍巾</strong>，極端寒冷環境下披上可使抗寒體質豁免獲得<strong>優勢</strong>。</li>
+      <li><strong>碎碎念詛咒：</strong>超過 12 小時未打開吃飯，便當盒會在背包裡<strong>嗡嗡震動</strong>（潛行檢定<strong>劣勢</strong>）並傳出姑媽呼喚聲，直到打開吃一口才安靜。</li>
+    </ul>
+  </div>
+
+  <!-- 極簡化開盒區塊：單一按鈕直接同時抽出菜色與紙條 -->
+  <div class="tool">
+    <button class="btn-gold" onclick="openLunchbox()">🍱 掀開便當盒（抽取今日菜色與紙條）</button>
+    <div class="tool-result" id="boxResult">點擊上方按鈕，看看姑媽今天幫你們準備了什麼好料！</div>
+  </div>
+
+  <h2>第二部分：《乖孫專屬暖心菜單》（十道完整版）</h2>
+  <div class="box">
+    <p class="say">「乖孩子們，歡迎回家！看看你們瘦得跟骷髏一樣，姑媽今天準備了整整十道拿手好菜，在姑媽家不准客氣，全部給我吃光光！」 —— 愛你們的瑪莎姑媽 敬上</p>
+  </div>
+
+  <div class="tool">
+    <strong id="fullTitle">🍲 現場用餐「飽足層數」計算器：目前 0 / 4 層</strong>
+    <button class="btn-gold" style="font-size:0.9rem; padding:6px 12px;" onclick="resetFull()">消化重置</button>
+    <div id="fullMsg" style="margin-top:8px; font-size:0.93rem;">提示：在姑媽家現場吃滿 4 層會變成小肥豬或寵物犬 1 小時（便當盒外帶不計入）。</div>
+  </div>
+
+  <h3>【五大招牌主菜】每道吃完消除 1 級力竭</h3>
+
+  <div class="box">
+    <div class="dish-title">1. 「氣死吸血鬼」大蒜迷迭香烤恐狼肋排 <button onclick="addFull(1, '烤恐狼肋排')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>比手臂還粗的帶骨肋排，刷滿蜂蜜烤出琉璃脆殼並嵌滿紫皮烤大蒜。咬破甜脆外殼後肉汁爆開，肉質一抿即離，濃烈蒜香直衝鼻腔驅散寒氣。</div>
+    <div class="say">「以前我最愛做這道給斯特拉德吃，結果他長大後居然敢跟我說大蒜味道太重！真是欠揍！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；8 小時內近戰攻擊附帶 1d6 火焰傷害，吸血鬼對你的啃咬攻擊具有劣勢。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">2. 「長高高」十全大補深林野菇濃湯 <button onclick="addFull(1, '野菇濃湯')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>黃金般的乳白濃湯，浮著雞油與發光雪地松露切片，濃稠到銀湯勺插著不倒。入口如絲絨化開，松露彈牙爽脆，吞下後全身發暖發懶。</div>
+    <div class="say">「你看那個穿鐵罐頭的騎士，瘦得盔甲都快晃出來了，快把這鍋全喝光！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；恢復 4d8 + 8 生命值，24 小時內獲得寒冷傷害抗性並免疫極端嚴寒。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">3. 「專治叛逆期」蜂蜜芥末烤乳豬 <button onclick="addFull(2, '蜂蜜芥末烤乳豬')">現場吃 (+2 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>整隻烤得金紅油亮的小乳豬，刷著蜂蜜芥末醬，嘴裡咬著發光魔法紅蘋果。豬皮脆如薄餅「咔滋」作響，精肉細嫩多汁，最後咬口紅蘋果清甜解膩。</div>
+    <div class="say">「男孩子就是要大口吃肉！這道菜吃完，包準你力氣大得能把鴉閣城堡的大門拆下來！」</div>
+    <div class="effect"><strong>效果：</strong>+2 飽足層數；8 小時內力量屬性暫時提升至 21，力量檢定與力量豁免具有優勢。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">4. 「眼睛亮晶晶」奶油香煎月亮湖銀鱒 <button onclick="addFull(1, '香煎月亮湖銀鱒')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>兩條肥美銀鱒魚煎至金黃酥脆，淋上檸檬香草奶油與烤杏仁片。魚皮薄脆鮮香，魚肉雪白細緻毫無土腥味，檸檬微酸與奶油榛果香交融。</div>
+    <div class="say">「整天在黑漆漆的森林裡摸黑走路怎麼行？多吃魚才會聰明，眼睛才會像貓頭鷹一樣亮！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；8 小時內獲得 60 呎黑暗視覺（若已有則 +30 呎），察覺與調查檢定具有優勢。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">5. 「跑得比狼快」紅酒慢燉老山羊膝 <button onclick="addFull(1, '紅酒慢燉老山羊膝')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>陳年紅酒慢燉六小時的帶骨羊膝，搭配綿密奶油馬鈴薯泥。用叉子輕撥肉塊便散開，濃郁果香與醇厚肉香融合，搭配薯泥讓人一口接一口。</div>
+    <div class="say">「別雷茲沼澤那老瘋婆子只會拿山羊血洗澡，真是暴殄天物！拿來燉湯補腳力才叫正經事！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；8 小時內基礎移動速度增加 10 呎，敵人對你發動的借機攻擊具有劣勢。</div>
+  </div>
+
+  <h3>【五大甜蜜點心與特調飲品】</h3>
+
+  <div class="box">
+    <div class="dish-title">6. 「驅邪避凶」祖傳雙倍肉桂蘋果派 <button onclick="addFull(1, '雙倍肉桂蘋果派')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>九吋格子派皮圓派，撒滿粗砂糖與肉桂粉，縫隙冒著金色焦糖蘋果泡。千層派皮化作奶油酥渣，蘋果軟糯綿密，果酸與肉桂辛甜交織。</div>
+    <div class="say">「別雷茲沼澤那個玩泥巴的老瘋婆子最討厭這股味道了，出門記得帶兩塊在身上！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；8 小時內獲得毒素傷害抗性，對抗不死生物與鬼婆法術的豁免檢定具有優勢。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">7. 「乖寶寶不哭」棉花糖熱可可（無限續杯） <button onclick="drinkOnly('棉花糖熱可可')">現場喝 (+0 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>大馬克杯裝著濃稠黑可可，漂浮三顆微笑雪白棉花糖。先碰到溫熱黏滑的棉花糖，緊接著濃醇可可包裹舌頭，喝完嘴角留下一圈白鬍子。</div>
+    <div class="say">「在外面受委屈了吧？喝完這杯就什麼煩惱都忘光光啦！」</div>
+    <div class="effect"><strong>效果：</strong>不增加飽足層數；解除恐慌與魅惑，8 小時內免疫恐慌（1 小時內喝超過兩杯需過 DC 16 感知豁免，否則香甜沉睡 4 小時）。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">8. 「嘴巴甜一點」妖精野莓起司舒芙蕾 <button onclick="addFull(1, '妖精野莓舒芙蕾')">現場吃 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>剛出爐膨脹如雲朵的金色舒芙蕾，淋著紫紅野莓醬與白糖粉。湯匙挖下發出細微氣泡聲，入口像咬了一口溫暖甜奶油雲朵，酸甜輕飄飄。</div>
+    <div class="say">「小法師跟吟遊詩人整天念咒語辛苦啦，吃點甜的潤潤喉嚨，說話才會跟抹了蜜一樣好聽！」</div>
+    <div class="effect"><strong>效果：</strong>+1 飽足層數；8 小時內所有魅力檢定具有優勢，且下一次施展法術時法術豁免 DC 暫時 +1。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">9. 「消消氣」薄荷接骨木花氣泡蜜露 <button onclick="drinkOnly('氣泡蜜露')">現場喝 (+0 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>水晶杯盛著淡金色氣泡花蜜飲，插著新鮮薄荷葉與冰塊。清涼氣泡在舌尖跳躍，接骨木花清香與薄荷涼意沖刷油膩，讓人打個舒暢的飽嗝。</div>
+    <div class="say">「吃太撐了嗎？來喝杯姑媽釀的花蜜水順順氣，喝完就能繼續吃下一輪啦！」</div>
+    <div class="effect"><strong>效果：</strong>不增加飽足層數；立刻恢復 2d8 + 4 生命值，並可直接消除 1 層已累積的飽足層數（每 24 小時限飲一杯）。</div>
+  </div>
+
+  <div class="box">
+    <div class="dish-title">10. 「斯特拉德最愛」暗夜黑森林櫻桃蛋糕（外帶任務品） <button onclick="addFull(1, '偷吃的黑森林蛋糕')">偷吃一口 (+1 飽足)</button></div>
+    <div><strong>外觀與口感：</strong>三層黑巧克力海綿蛋糕，夾滿鮮奶油與白蘭地酒漬酸櫻桃，用蕾絲餐巾裝在黃銅保溫盒裡。黑巧微苦與鮮奶油碰撞，咬破櫻桃酒香猛然炸開。</div>
+    <div class="say">「這盒不准你們偷吃！幫姑媽帶去給鴉閣城堡那個不孝姪子，告訴他不吃完不准睡覺！」</div>
+    <div class="effect"><strong>效果：</strong>在斯特拉德面前打開此盒，伯爵會陷入 1 回合極度震驚（喪失反應與傳奇動作 1 輪），並無奈停手聽你們說話。</div>
+  </div>
+</div>
+
+<script>
+  var meals = [
+    "【1號】大蒜迷迭香烤恐狼肋排：8小時內近戰附帶 1d6 火焰傷害，吸血鬼啃咬具有劣勢。",
+    "【2號】十全大補深林野菇濃湯：恢復 4d8+8 HP，24小時內獲得寒冷抗性並免疫極端嚴寒。",
+    "【3號】蜂蜜芥末烤乳豬：8小時內力量暫時提升至 21，力量檢定與豁免具有優勢。",
+    "【4號】奶油香煎月亮湖銀鱒：8小時內獲得 60呎黑暗視覺（或+30呎），察覺與調查具有優勢。",
+    "【5號】紅酒慢燉老山羊膝：8小時內移動速度 +10呎，敵人借機攻擊具有劣勢。",
+    "【6號】祖傳雙倍肉桂蘋果派：8小時內獲得毒素抗性，對抗不死生物與鬼婆法術豁免優勢。",
+    "【7號】棉花糖熱可可：解除恐慌與魅惑，8小時內免疫恐慌。",
+    "【8號】妖精野莓起司舒芙蕾：8小時內魅力檢定優勢，下一次施法豁免 DC +1。",
+    "【9號】薄荷接骨木花氣泡蜜露：恢復 2d8+4 HP，並消除 1 層飽足層數。",
+    "【10號 大獎】姑媽特製綜合愛心大拼盤：同時恢復 3d8+6 HP 並獲得 15 點臨時生命值！"
+  ];
+
+  var notes = [
+    "「昨晚巴拉圖克山起大霧，你們那邊冷不冷？肉要全吃完，湯也要喝乾！」",
+    "「斯特拉德那死小孩昨天又沒派烏鴉來請安，遇到他幫姑媽敲他兩下腦袋！」",
+    "「別雷茲沼澤那個老瘋婆子最近好像又在搗鼓壞事，走路小心別踩進泥巴！」",
+    "「今天姑媽多放了兩塊肉桂餅乾在角落，留著下午肚子餓的時候當點心吃喔！」"
+  ];
+
+  // 最簡化的開盒驅動函式：點一下直接同時抽菜色與紙條並顯示
+  function openLunchbox() {
+    var m = meals[Math.floor(Math.random() * meals.length)];
+    var n = notes[Math.floor(Math.random() * notes.length)];
+    document.getElementById("boxResult").innerHTML =
+      "<strong>🎲 今日便當菜色（4人份，不計飽足懲罰）：</strong><br>" + m +
+      "<br><br><strong>📜 餐巾紙手寫留言：</strong><br><em>" + n + "</em>";
+  }
+
+  var fullCount = 0;
+
+  function updateFull(actionText) {
+    var desc = "";
+    if (fullCount === 0) desc = "肚子空空！";
+    else if (fullCount === 1) desc = "微飽（+10 臨時 HP，速度 -5 呎）";
+    else if (fullCount === 2) desc = "好飽（+20 臨時 HP，速度減半，敏捷豁免劣勢）";
+    else if (fullCount === 3) desc = "撐死了（+30 臨時 HP，速度降為 5 呎，攻擊與檢定劣勢）";
+    else desc = "🐷 已達 4 層！你變成了圓滾滾的小肥豬或寵物犬（持續 1 小時），開心地搖尾巴！";
+
+    document.getElementById("fullTitle").textContent = "🍲 現場用餐「飽足層數」計算器：目前 " + fullCount + " / 4 層";
+    document.getElementById("fullMsg").textContent = actionText + " ➔ " + desc;
+  }
+
+  function addFull(num, name) {
+    fullCount = fullCount + num;
+    if (fullCount > 4) fullCount = 4;
+    updateFull("享用了【" + name + "】");
+  }
+
+  function drinkOnly(name) {
+    if (name === "氣泡蜜露" && fullCount > 0) {
+      fullCount = fullCount - 1;
+      updateFull("喝了【" + name + "】，消除 1 層飽足感");
+    } else {
+      updateFull("喝了【" + name + "】，不增加飽足層數");
+    }
+  }
+
+  function resetFull() {
+    fullCount = 0;
+    updateFull("消化完畢，層數歸零");
+  }
+</script>
+
+</body>
+</html>
